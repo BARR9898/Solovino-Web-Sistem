@@ -1,0 +1,81 @@
+.main {
+    min-width: 580px;
+}
+
+mat-toolbar {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+mat-card {
+    border-radius: 10px;
+}
+
+mat-card-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 2px;
+    margin-top: 15px;
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid;
+}
+
+textarea {
+    padding: 5px;
+    border: 1px solid;
+}
+
+select {
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid;
+}
+
+button {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+}
+
+#upload-image {
+    width: auto;
+}
+
+.file-exist,
+.file-noexist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

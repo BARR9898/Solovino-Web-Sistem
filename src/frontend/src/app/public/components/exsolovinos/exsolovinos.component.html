@@ -1,0 +1,78 @@
+<div class="main">
+
+    <div class="row-sm-12 row-md-12 row-lg-12 d-flex p-4">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <span>Cantidad de exsolovinos:</span>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2 d-flex justify-content-start">
+            <span>{{cuantitiOfExsolovinos}}</span>
+        </div>
+    </div>
+
+    <div class="row-sm-12 row-md-12 row-lg-12 p-4 d-flex flex-column align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-4 mt-4" *ngFor="let exsolovino of exsolovinos; let i = index">
+            <div class="card" style="width:100%;">
+                <div class="title d-flex justify-content-center mt-2">
+                    <h2>{{exsolovino.name_pet}}</h2>
+                </div>
+
+                <div class="img-dog d-flex justify-content-center">
+                    <img class="card-img-top img-fluid" src="../../../../assets/images/dog1.svg" alt="Card image cap">
+                </div>
+                <div class="card-body">
+
+                    <div class="card-text">
+                        <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+                            <div class="col-sm-7 col-lg-4 col-md-3">
+                                <span>Descripción:</span>
+                            </div>
+                            <div class="col-sm-5 col-lg-8 col-md-9">
+                                <span>{{exsolovino.description_pet}}</span>
+                            </div>
+                        </div>
+                        <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+                            <div class="col-sm-7 col-lg-4 col-md-3">
+                                <span>Edad:</span>
+                            </div>
+                            <div class="col-sm-5 col-lg-8 col-md-9">
+                                <span>{{exsolovino.age_pet}}</span>
+                            </div>
+                        </div>
+                        <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+                            <div class="col-sm-7 col-lg-4 col-md-3">
+                                <span>Raza:</span>
+                            </div>
+                            <div class="col-sm-5 col-lg-8 col-md-9">
+                                <span>{{exsolovino.race_pet}}</span>
+                            </div>
+                        </div>
+                        <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+                            <div class="col-sm-7 col-lg-4 col-md-3">
+                                <span>Sexo:</span>
+                            </div>
+                            <div class="col-sm-5 col-lg-8 col-md-9">
+                                <span>{{exsolovino.sex_pet}}</span>
+                            </div>
+                        </div>
+                        <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+                            <div class="col-sm-7 col-lg-4 col-md-3">
+                                <span>Esterilización:</span>
+                            </div>
+                            <div class="col-sm-5 col-lg-8 col-md-9">
+                                <span *ngIf="exsolovino.sterulization_pet;else isNotEsteriliced">Si</span>
+                            </div>
+                            <ng-template #isNotEsteriliced>
+                                <span>No</span>
+                            </ng-template>
+
+                        </div>
+                    </div>
+                    <div class="actions d-flex justify-content-center">
+                        <a href="/" mat-raised-button class=" mt-4">Ver</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="main d-flex align-items-center flex-column p-2">
+    <div class="card mt-4" style=" width: 300px;" *ngFor="let adoption of adopciones; let i = index">
+
+        <div class="img-container d-flex justify-content-center">
+            <img class="card-img-top" src="../../../../assets//images/dog.png" alt="Card image cap">
+        </div>
+
+        <div class="card-body">
+            <div class="row-12 d-flex mt-2">
+                <div class="col-6 d-flex justify-content-center  align-items-center"> <span>Edad:</span> </div>
+                <div class="col-6  justify-content-center d-flex flex-column"> <span>{{adoption.age_pet}}</span> </div>
+            </div>
+            <div class="row-12 d-flex mt-2">
+                <div class="col-6 d-flex justify-content-center"> <span>Descripción:</span> </div>
+                <div class="col-6"> <span>{{adoption.description_pet}}</span> </div>
+            </div>
+            <div class="row-12 d-flex mt-2">
+                <div class="col-6 d-flex justify-content-center"> <span>Esterilización:</span> </div>
+                <div class="col-6">
+                    <span *ngIf="adoption.sterulization_pet; else isNotSteriliced">
+                        Si
+                    </span>
+                    <ng-template #isNotSteriliced>
+                        <span>No</span>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="row-12 d-flex mt-2">
+                <div class="col-6 d-flex justify-content-center"> <span>Sexo:</span> </div>
+                <div class="col-6"> <span>{{adoption.sex_pet}}</span> </div>
+            </div>
+            <div class="row-12 d-flex mt-2">
+                <div class="col-6 d-flex justify-content-center"> <span>Raza:</span> </div>
+                <div class="col-6"> <span>{{adoption.race_pet}}</span> </div>
+            </div>
+            <div class="row-12 d-flex justify-content-center action mt-2">
+                <button mat-raised-button>
+                    Ver
+                </button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

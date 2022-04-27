@@ -1,0 +1,67 @@
+<div class="main">
+    <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-8 p-4">
+            <mat-card>
+                <mat-toolbar class="d-flex justify-content-center " color="primary">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Crear una adopción
+                        </mat-card-title>
+                    </mat-card-header>
+                </mat-toolbar>
+
+                <mat-card-content class="d-flex justify-content-center">
+                    <form [formGroup]="createAdoptionForm" (ngSubmit)="saveAdoption(sexo,sterilization,exsolovino)">
+                        <div class="form-group">
+                            <div class="form-section">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" placeholder="Ingrese el nombre" formControlName="name_pet">
+                            </div>
+                            <div class="form-section">
+                                <label for="age">Edad</label>
+                                <input type="number" id="age" placeholder="Ingrese la edad" formControlName="age_pet">
+                            </div>
+                            <div class="form-section">
+                                <label for="sex">Sexo</label>
+                                <select id="sex" #sexo>
+                        <option *ngFor="let option of sex_options">{{option}}</option>
+                      </select>
+
+                            </div>
+                            <div class="form-section">
+                                <label for="sex">Raza</label>
+                                <input type="text" id="race" formControlName="race_pet" placeholder="Ingrese una raza">
+                            </div>
+                            <div class="form-section">
+                                <label for="decription">Descripción</label>
+                                <textarea id="decription" formControlName="description_pet" placeholder="Ingrese una descripción"></textarea>
+                            </div>
+                            <div class="form-section">
+                                <label for="is_exsolovino">Exsolovino</label>
+                                <select id="is_exsolovino" #exsolovino>
+                      <option *ngFor="let option of exsolovino_options">{{option}}</option>
+                    </select>
+
+                            </div>
+                            <div class="form-section">
+                                <label for="st">Esterilización</label>
+                                <select id="st" #sterilization>
+                              <option *ngFor="let option of sterilization_options">{{option}}</option>
+                            </select>
+
+                            </div>
+                        </div>
+                        <div class="form-actions mt-4">
+                            <button type="submit" id="save-button" mat-raised-button color="primary">Guardar
+                              <mat-icon class="ml-2">
+                                save
+                              </mat-icon>
+                            </button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

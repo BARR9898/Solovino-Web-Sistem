@@ -1,0 +1,48 @@
+<div class="main">
+    <div class="row-sm-12 row-md-12 row-lg-12 p-4">
+        <div class="col-sm-12 col-md-7 col-lg-7">
+            <button mat-raised-button routerLink='/admin/create-post'>
+                Crear
+                <mat-icon>
+                    add
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="row-sm-12 row-md-12 row-lg-12 p-4">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let post of postsFromServer; let i = index">
+                            <td>{{post._id}}</td>
+                            <td>{{post.name_pet}}</td>
+                            <td>
+                                <button mat-raised-button [routerLink]="['/admin/view-post',post._id]">
+                              <mat-icon>
+                              visibility
+                              </mat-icon>
+                            </button>
+                            </td>
+                            <td>
+                                <button mat-raised-button (click)="deletePost(post._id)">
+                            <mat-icon>
+                              delete
+                            </mat-icon>
+                          </button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

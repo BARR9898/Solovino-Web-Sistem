@@ -1,0 +1,16 @@
+img {
+    width: 200px;
+    height: 200px;
+}
+
+a {
+    width: 40%;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+span {
+    font-size: 18px;
+}

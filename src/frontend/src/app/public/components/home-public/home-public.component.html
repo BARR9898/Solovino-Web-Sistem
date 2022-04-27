@@ -1,0 +1,43 @@
+<div class="row row-sm-12  row-md-12 row-lg-12 d-flex justify-content-center">
+    <div class="col col-sm-12 col-md-4 col-lg-6  d-flex justify-content-center flex-column mt-4 p-4">
+        <div class="card mt-4 " style="width: auto;" *ngFor="let post of posts;let i = index">
+            <div class="row d-flex justify-content-center">
+                <img src="../../../../assets/images/dog.png" class="card-img-top" alt="..." style="width: 200px; height:200px; border-radius: 20px;">
+            </div>
+            <div class="card-body ">
+                <h5 class="card-title">{{post.name_pet}}</h5>
+                <div class="card-text">
+                    <div class="row  ">
+                        <span style="width: auto;">Edad:</span>
+                        <span style="width: auto;">{{post.age_pet}}</span>
+                    </div>
+                    <div class="row">
+                        <span style="width: auto;">Sexo:</span>
+                        <span style="width: auto;">{{post.sex_pet}}</span>
+                    </div>
+                    <div class="row  ">
+                        <span style="width: auto;">Raza:</span>
+                        <span style="width: auto;">{{post.race_pet}}</span>
+                    </div>
+                    <div class="row  ">
+                        <span style="width: auto;">Descripción:</span>
+                        <span style="width: auto;">{{post.description_pet}}</span>
+                    </div>
+                    <div class="row  ">
+                        <span style="width: auto;">Lugar de desaparición:</span>
+                        <span style="width: auto;">{{post.place_disapparence}}</span>
+                    </div>
+                    <div class="row  ">
+                        <span style="width: auto;">Fecha de desaparición:</span>
+                        <span style="width: auto;">{{post.place_disapparence}}</span>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <button class="mt-4" mat-raised-button>Ver</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

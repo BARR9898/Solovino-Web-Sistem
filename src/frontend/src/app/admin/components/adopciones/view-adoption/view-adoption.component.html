@@ -1,0 +1,123 @@
+<div class="main p-4">
+
+    <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-6 m-2">
+            <mat-card>
+                <mat-card-title>
+                    <mat-toolbar>
+                        Vista previa
+                    </mat-toolbar>
+
+                </mat-card-title>
+                <mat-card-content>
+                    <form [formGroup]="previewForm">
+                        <div class="image-section">
+                            <img [src]="photoSelected || '../../../../assets/images/dog1.svg'" alt="">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" readonly formControlName="name_pet" [(ngModel)]="dataFromServer.name_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Edad</label>
+                            <input type="text" id="age" readonly formControlName="age_pet" [(ngModel)]="dataFromServer.age_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Sexo</label>
+                            <input type="text" id="sex" readonly formControlName="sex_pet" [(ngModel)]="dataFromServer.sex_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="race">Raza</label>
+                            <input type="text" id="race" readonly formControlName="race_pet" [(ngModel)]="dataFromServer.race_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="exsolovino">Exsolovino</label>
+                            <input type="text" id="exsolovino" readonly formControlName="is_exsolovino" [(ngModel)]="dataFromServer.is_exsolovino">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea type="text" id="description" readonly formControlName="description_pet" [(ngModel)]="dataFromServer.description_pet"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Sterilizacion</label>
+                            <input type="text" id="sex" readonly formControlName="sterulization_pet" [(ngModel)]="dataFromServer.sterulization_pet">
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 m-2">
+            <mat-card>
+                <mat-card-title>
+                    <mat-toolbar>
+                        Datos del post
+                    </mat-toolbar>
+
+                </mat-card-title>
+                <mat-card-content>
+                    <form [formGroup]="updatePetForm" (ngSubmit)="updatePet(sex_pet,isexsolovino,sterilization)">
+                        <div class="form-group">
+                            <input type="file" hidden formControlName="image" (change)="onPhotoSelected($event)" #imageUpload>
+                            <div class="select-file">
+                                <button type="button" mat-raised-button (click)="imageUpload.click()" id="upload-image">
+                                <div class="file-exist" *ngIf="photoSelected">
+                                  <p>Archivo: {{fileName}}</p>
+                                </div>
+                                <div class="file-noexist" *ngIf="!photoSelected">
+                                  <p>Cargar imagen</p>
+                                  <mat-icon>attach_file</mat-icon>
+                                </div>
+                              </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Nombre</label>
+                            <input type="text" id="age" formControlName="name_pet" [(ngModel)]="dataFromServer.name_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Edad</label>
+                            <input type="number" id="age" formControlName="age_pet" [(ngModel)]="dataFromServer.age_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Sexo</label>
+                            <select id="sex" #sex_pet (change)="setValue($event)">
+                                <option *ngFor="let option of sex_options" >{{option}}</option>
+                            </select>
+                            <input id="updated_pet_form_input_sex" hidden type="text" formControlName="sex_pet" [(ngModel)]="dataFromServer.sex_pet" [value]="dataFromServer.sex_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="race">Raza</label>
+                            <input type="text" id="race" formControlName="race_pet" [(ngModel)]="dataFromServer.race_pet" [value]="dataFromServer.race_pet">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <textarea type="text" id="description" formControlName="description_pet" [(ngModel)]="dataFromServer.description_pet"></textarea>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="exsolovino">Es exsolovino</label>
+                            <select name="" id="exsolovino" #isexsolovino (change)="setSexFormUpdatedPetForm($event)">
+                              <option *ngFor="let state of exsolovino" >{{state}}</option>
+                            </select>
+                            <input type="text" hidden name="" id="" [value]="dataFromServer.is_exsolovino" [(ngModel)]="dataFromServer.is_exsolovino" formControlName="is_exsolovino">
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="st">Esterilización</label>
+                            <select name="" id="st" #sterilization (change)="setSterilizationFormUpdatedPetForm($event)">
+                            <option *ngFor="let option of sterilization_options " >{{option}}</option>
+                            </select>
+                            <input type="text " hidden name=" " id=" " [value]="dataFromServer.sterulization_pet " [(ngModel)]="dataFromServer.sterulization_pet" formControlName="sterulization_pet">
+
+                        </div>
+                        <button mat-raised-button type="submit " color="primary">Guardar</button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+
+
+        </div>
+    </div>
+</div>
