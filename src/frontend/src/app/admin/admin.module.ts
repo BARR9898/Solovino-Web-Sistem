@@ -22,6 +22,7 @@ import { CreateAdoptionComponent } from './components/adopciones/create-adoption
 import { ViewAdoptionComponent } from './components/adopciones/view-adoption/view-adoption.component';
 import { AdoptionsListComponent } from './components/adopciones/adoptions-list/adoptions-list.component';
 import { ExsolovinosComponent } from './components/exsolovinos/exsolovinos.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 @NgModule({
   declarations: [
     AdminLayoutComponent,
@@ -32,6 +33,7 @@ import { ExsolovinosComponent } from './components/exsolovinos/exsolovinos.compo
     ViewAdoptionComponent,
     AdoptionsListComponent,
     ExsolovinosComponent,
+    AboutUsComponent,
   ],
   imports: [
     CommonModule,

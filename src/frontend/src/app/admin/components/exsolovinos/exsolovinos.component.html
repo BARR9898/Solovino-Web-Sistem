@@ -1,1 +1,39 @@
-<p>exsolovinos works!</p>
+<div class="main">
+    <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center mt-4">
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            <mat-card>
+                <mat-card-title>
+                    Exsolovinos
+                </mat-card-title>
+                <mat-card-content>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let exsolovino of exsolovinos">
+                                    <td>{{exsolovino._id}}</td>
+                                    <td>{{exsolovino.name_pet}}</td>
+                                    <td>
+                                        <button mat-raised-button (click)="deleteExsolovino(exsolovino._id)">
+                                        <mat-icon>
+                                          delete
+                                        </mat-icon>
+                                      </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

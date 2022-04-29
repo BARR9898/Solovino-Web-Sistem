@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SobreNosotrosComponent } from '../public/components/sobre-nosotros/sobre-nosotros.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AdoptionsListComponent } from './components/adopciones/adoptions-list/adoptions-list.component';
 import { CreateAdoptionComponent } from './components/adopciones/create-adoption/create-adoption.component';
 import { ViewAdoptionComponent } from './components/adopciones/view-adoption/view-adoption.component';
@@ -16,6 +18,10 @@ const routes: Routes = [
   {
     path:'create-post',
     component: CreatePostComponent
+  },
+  {
+    path:'nosotros',
+    component:AboutUsComponent
   },
   {
     path:'view-post/:id',
