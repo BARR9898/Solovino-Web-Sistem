@@ -16,6 +16,9 @@ export class SobreNosotrosService {
     return this.http.get(this.URL)
   }
 
+  updateInfo(id:string,info : SobreNosotros){
+    return this.http.put(this.URL + '/' + id , info)
+  }
 
   deleteInformation(id:string){
     return this.http.delete(this.URL + '/' + id)

@@ -40,11 +40,11 @@ export async function deleteInfo(req: Request, res: Response): Promise<Response>
 //Update info
 export async function updateInfo(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
-    const newInfo = new SobreNosotros({
+    const newInfo = {
         vision: req.body.vision,
         mision: req.body.mision,
         equipo: req.body.equipo
-    });
+    }
     const updatedInfo = await SobreNosotros.findByIdAndUpdate(id,newInfo);
     return res.json({
         message: 'Successfully updated',

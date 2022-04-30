@@ -1,1 +1,59 @@
-<p>about-us works!</p>
+<div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center mt-4">
+    <div class="col-sm-12 col-md-8 col-lg-8 d-flex justify-content-center">
+        <h2>Sobre Nosotros</h2>
+    </div>
+</div>
+
+<div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
+    <div class="col-sm-12 col-md-8 col-lg-8">
+        <mat-card class="mat-elevation-z4">
+
+            <mat-card-content>
+                <form [formGroup]="aboutUsForm" (ngSubmit)="savePersonTeam()">
+
+
+
+                    <div class="form-group mb-4" formArrayName="equipo">
+                        <div class="array-controls" *ngFor="let control of equipo.controls;let i = index" [formGroupName]="i">
+
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" formControlName="nombre">
+                            <label for="curriculum">Curriculum</label>
+                            <textarea id="curriculum" formControlName="curriculum"></textarea>
+                            <div class="button-section">
+                                <button type="button" (click)="addPersonTeam()" mat-raised-button color="primary">
+                                        <mat-icon>
+                                            add
+                                        </mat-icon>
+                                        Agregar
+                                </button>
+
+                                <button type="button" (click)="deletePersonTeam(i)" mat-raised-button color="warn">
+                                        <mat-icon>
+                                          delete
+                                        </mat-icon>
+                                        Eliminar
+                                      </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <mat-divider class="mb-4"></mat-divider>
+                    <div class="form-group">
+                        <label for="mision">Misión</label>
+                        <textarea type="text" id="mision" formControlName="mision" [(ngModel)]="infoFromServer[0].mision"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="vision">Visión</label>
+                        <textarea type="text" id="vision" formControlName="vision" [(ngModel)]="infoFromServer[0].vision"></textarea>
+                    </div>
+                    <button type="submit" mat-raised-button color="primary" id="save-button"><mat-icon>save</mat-icon> Guardar</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
