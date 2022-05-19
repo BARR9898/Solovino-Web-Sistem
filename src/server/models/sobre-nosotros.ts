@@ -4,15 +4,15 @@ const SobreNosotrosSchema = new Schema(
     {
         vision:{
             type: String,
-            required: true
+            
         },
         mision:{
             type: String,
-            required: true
+            
         },
         equipo:{
             type: Array,
-            required:true
+            
         }
         
         

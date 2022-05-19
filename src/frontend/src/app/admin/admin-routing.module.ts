@@ -8,6 +8,7 @@ import { ViewAdoptionComponent } from './components/adopciones/view-adoption/vie
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { ExsolovinosComponent } from './components/exsolovinos/exsolovinos.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { UsersComponent } from './components/users/users.component';
 import { ViewPostComponent } from './components/view-post/view-post.component';
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path:'view-adoption/:id' ,
     component: ViewAdoptionComponent
+  },
+  {
+    path:'users' ,
+    component: UsersComponent
   },
   {
     path: '',

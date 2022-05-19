@@ -9,17 +9,22 @@ import { MaterialModule } from '../material/material.module';
 import { AdopcionesComponent } from './components/adopciones/adopciones.component';
 import { ExsolovinosComponent } from './components/exsolovinos/exsolovinos.component';
 import { SobreNosotrosComponent } from './components/sobre-nosotros/sobre-nosotros.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     PublicLayoutComponent,
     HomePublicComponent,
     AdopcionesComponent,
     ExsolovinosComponent,
-    SobreNosotrosComponent
+    SobreNosotrosComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     PublicRoutingModule,
     SharedModule,
     MaterialModule,

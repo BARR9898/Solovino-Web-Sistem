@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdopcionesComponent } from './components/adopciones/adopciones.component';
 import { ExsolovinosComponent } from './components/exsolovinos/exsolovinos.component';
 import { HomePublicComponent } from './components/home-public/home-public.component';
+import { LoginComponent } from './components/login/login.component';
 import { SobreNosotrosComponent } from './components/sobre-nosotros/sobre-nosotros.component';
 
 const routes: Routes = [
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path:'sobre-nosotros',
     component:SobreNosotrosComponent
+
+  },
+  {
+    path:'login',
+    component:LoginComponent
 
   },
   {

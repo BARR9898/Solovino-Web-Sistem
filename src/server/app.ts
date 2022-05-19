@@ -7,7 +7,7 @@ import cors from 'cors'
 import adoptionsRoutes from './routes/adoptions.routes'
 import postsRoutes from './routes/posts.routes'
 import sobreNosotrosRoutes from './routes/sobre-nostros'
-
+import userRoutes from './routes/users.routes'
 class Applicaction {
 
     app: express.Application;
@@ -38,6 +38,7 @@ class Applicaction {
         this.app.use('/adopciones',adoptionsRoutes)
         this.app.use('/posts',postsRoutes)
         this.app.use('/sobre-nosotros',sobreNosotrosRoutes)
+        this.app.use('/users',userRoutes)
     }
 
     
