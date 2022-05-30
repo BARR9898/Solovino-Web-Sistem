@@ -21,8 +21,19 @@ export class PostsService {
     return this.http.get(this.URL + '/' + id)
   }
 
-  createPost(post:Posts){
-    return this.http.post(this.URL,post)
+  createPost(name_pet:string,age_pet:string,race_pet:string,sex_pet:string,description_pet:string,
+    place_disapparence:string,date_disapparence:string,image:File){
+      const fd = new FormData();
+      fd.append('name_pet',name_pet);
+      fd.append('age_pet',age_pet);
+      fd.append('race_pet',race_pet);
+      fd.append('sex_pet',sex_pet);
+      fd.append('description_pet',description_pet);
+      fd.append('place_disapparence',place_disapparence);
+      fd.append('date_disapparence',date_disapparence);
+      fd.append('image',image)
+
+    return this.http.post(this.URL,fd)
   }
 
   deletePost(id:string){

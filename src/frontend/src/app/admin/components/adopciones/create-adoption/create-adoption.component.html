@@ -11,52 +11,69 @@
                 </mat-toolbar>
 
                 <mat-card-content class="d-flex justify-content-center">
-                    <form [formGroup]="createAdoptionForm" (ngSubmit)="saveAdoption(sexo,sterilization,exsolovino)">
+                    <form [formGroup]="createAdoptionForm" (ngSubmit)="saveAdoption(name_pet,age_pet,race_pet,sexo,sterilization,description_pet,exsolovino,title)">
                         <div class="form-group">
                             <div class="form-section">
-                                <label for="name">Nombre</label>
-                                <input type="text" id="name" placeholder="Ingrese el nombre" formControlName="name_pet">
-                            </div>
-                            <div class="form-section">
-                                <label for="age">Edad</label>
-                                <input type="number" id="age" placeholder="Ingrese la edad" formControlName="age_pet">
-                            </div>
-                            <div class="form-section">
-                                <label for="sex">Sexo</label>
-                                <select id="sex" #sexo>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" placeholder="Ingrese el titulo" formControlName="title" #title>
+                                <input type="file" class="form-control d-none" id="profile_picture" formControlName="profile_image" (change)="onPhotoSelected($event)" #fileUpload>
+                                <div class="preview-image p-4">
+                                    <div class="img-container img-fluid">
+                                        <img [src]="photoSelected || '/../../../assets/Images/profile.svg' " class="img-fluid mb-4" alt="">
+                                    </div>
+                                    <button type="button" class="btn btn-" mat-raised-button class="upload-btn" (click)="fileUpload.click()">
+                                    <div  class="photoNoExist" *ngIf="!photoSelected">
+                                      <mat-icon>attach_file</mat-icon>
+                                      Cargar imágen
+                                    </div>
+                                  <p *ngIf="photoSelected"> Nombre del archivo: {{fileName}} </p>
+                                  </button>
+                                </div>
+                                <div class="form-section">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" placeholder="Ingrese el nombre" formControlName="name_pet" #name_pet>
+                                </div>
+                                <div class="form-section">
+                                    <label for="age">Edad</label>
+                                    <input type="number" id="age" placeholder="Ingrese la edad" formControlName="age_pet" #age_pet>
+                                </div>
+                                <div class="form-section">
+                                    <label for="sex">Sexo</label>
+                                    <select id="sex" #sexo>
                         <option *ngFor="let option of sex_options">{{option}}</option>
                       </select>
 
-                            </div>
-                            <div class="form-section">
-                                <label for="sex">Raza</label>
-                                <input type="text" id="race" formControlName="race_pet" placeholder="Ingrese una raza">
-                            </div>
-                            <div class="form-section">
-                                <label for="decription">Descripción</label>
-                                <textarea id="decription" formControlName="description_pet" placeholder="Ingrese una descripción"></textarea>
-                            </div>
-                            <div class="form-section">
-                                <label for="is_exsolovino">Exsolovino</label>
-                                <select id="is_exsolovino" #exsolovino>
+                                </div>
+                                <div class="form-section">
+                                    <label for="sex">Raza</label>
+                                    <input type="text" id="race" formControlName="race_pet" placeholder="Ingrese una raza" #race_pet>
+                                </div>
+                                <div class="form-section">
+                                    <label for="decription">Descripción</label>
+                                    <textarea id="decription" formControlName="description_pet" placeholder="Ingrese una descripción" #description_pet></textarea>
+                                </div>
+                                <div class="form-section">
+                                    <label for="is_exsolovino">Exsolovino</label>
+                                    <select id="is_exsolovino" #exsolovino>
                       <option *ngFor="let option of exsolovino_options">{{option}}</option>
                     </select>
 
-                            </div>
-                            <div class="form-section">
-                                <label for="st">Esterilización</label>
-                                <select id="st" #sterilization>
+                                </div>
+                                <div class="form-section">
+                                    <label for="st">Esterilización</label>
+                                    <select id="st" #sterilization>
                               <option *ngFor="let option of sterilization_options">{{option}}</option>
                             </select>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-actions mt-4">
-                            <button type="submit" id="save-button" mat-raised-button color="primary">Guardar
+                            <div class="form-actions mt-4">
+                                <button type="submit" id="save-button" mat-raised-button color="primary">Guardar
                               <mat-icon class="ml-2">
                                 save
                               </mat-icon>
                             </button>
+                            </div>
                         </div>
                     </form>
                 </mat-card-content>

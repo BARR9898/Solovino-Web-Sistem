@@ -1,5 +1,8 @@
 import {  Request, Response } from 'express'
 
+interface MulterRequest extends Request {
+    file: any;
+}
 
 // Models
 import Post from '../models/posts';
@@ -16,13 +19,17 @@ export async function getAlllPosts(req: Request, res: Response): Promise<Respons
 //Create Post
 export async function createPost(req: Request, res: Response): Promise<Response> {
     const newPost = new Post({
-        name_pet : req.body.name_pet ,  
-        age_pet : req.body.age_pet,
-        race_pet : req.body.race_pet,
-        sex_pet : req.body.sex_pet,
-        description_pet :  req.body.description_pet,
-        place_disapparence : req.body.place_disapparence,
-        date_disapparence : req.body.date_disapparence
+        name_pet:req.body.name_pet ,  
+        age_pet:req.body.age_pet,
+        race_pet:req.body.race_pet,
+        sex_pet:req.body.sex_pet,
+        description_pet:req.body.description_pet,
+        place_disapparence:req.body.place_disapparence,
+        date_disapparence:req.body.date_disapparence,
+        image:{
+            title:req.body.title,
+            imagePath:(req as MulterRequest).file.path
+        }
     });
     await newPost.save();
     return res.json({
@@ -55,7 +62,11 @@ export async function updatedPost(req: Request, res: Response): Promise<Response
         sex_pet : req.body.sex_pet,
         description_pet :  req.body.description_pet,
         place_disapparence : req.body.place_disapparence,
-        date_disapparence : req.body.date_disapparence
+        date_disapparence : req.body.date_disapparence,
+        image:{
+            title:req.body.title,
+            imagePath:(req as MulterRequest).file.path
+        }
     };
     const updatedPost = await Post.findByIdAndUpdate(id,newPost);
     return res.json({

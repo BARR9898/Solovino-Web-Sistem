@@ -14,6 +14,7 @@ interface HtmlInputEvent extends Event {
 })
 export class ViewAdoptionComponent implements OnInit {
 
+  file!:File;
   id:string='';
   dataFromServer : any = [];
   fileName:string=''
@@ -37,6 +38,8 @@ export class ViewAdoptionComponent implements OnInit {
       this.adopcionService.getAdoption(this.id)
     .subscribe(res => {
       this.dataFromServer = res
+      console.log(this.dataFromServer);
+
       })
 
 
@@ -58,16 +61,7 @@ export class ViewAdoptionComponent implements OnInit {
 
   }
 
-  previewForm = this.formBuilder.group({
-    name_pet:[''],
-    age_pet:[''],
-    race_pet:[''],
-    sex_pet:[''],
-    image:[''],
-    description_pet:[''],
-    sterulization_pet:[''],
-    is_exsolovino:['']
-  })
+
 
   updatePetForm = this.formBuilder.group({
     name_pet:[''],
@@ -77,7 +71,8 @@ export class ViewAdoptionComponent implements OnInit {
     image:[''],
     description_pet:[''],
     sterulization_pet:[''],
-    is_exsolovino:['']
+    is_exsolovino:[''],
+    title:[''],
   })
 
   onPhotoSelected(event: HtmlInputEvent | any) {
@@ -96,12 +91,16 @@ export class ViewAdoptionComponent implements OnInit {
     }
   }
 
-  updatePet(sex:HTMLSelectElement,exsolovino:HTMLSelectElement,sterilization:HTMLSelectElement){
+  updatePet(name_pet: HTMLInputElement, age_pet:HTMLInputElement, race_pet: HTMLInputElement,
+    sex:HTMLSelectElement, description_pet: HTMLTextAreaElement,
+     exsolovino:HTMLSelectElement, sterilization:HTMLSelectElement,
+    title:HTMLInputElement){
     this.setControlSexToHerValueInString(sex)
     this.setControlExsolovinoToBoolean(exsolovino)
     this.setControlSterilziationToCorrectValue(sterilization)
     const newAdoption = this.updatePetForm.value
-    this.adopcionService.updatePet(this.id, newAdoption)
+    this.adopcionService.updatePet(this.id, name_pet.value,sex.value,race_pet.value,description_pet.value,
+      sex.value,exsolovino.value,sterilization.value,title.value,this.file)
     .subscribe(res => {
       this.router.navigate(['admin/list-adoptions'])
     })
@@ -151,5 +150,10 @@ export class ViewAdoptionComponent implements OnInit {
 
   setSterilizationFormUpdatedPetForm(event : HTMLSelectElement | any){
     this.updatePetForm.controls['sterulization_pet'].setValue(event.target.value)
+  }
+
+
+  resetForm(){
+    this.updatePetForm.reset()
   }
 }

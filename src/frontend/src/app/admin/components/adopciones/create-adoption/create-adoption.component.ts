@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { race } from 'rxjs';
 import { AdopcionesService } from 'src/app/core/services/adopciones/adopciones.service';
 
 interface HtmlInputEvent extends Event {
@@ -14,7 +15,9 @@ interface HtmlInputEvent extends Event {
   styleUrls: ['./create-adoption.component.css']
 })
 export class CreateAdoptionComponent implements OnInit {
-
+  fileName: string = '';
+  photoSelected: string | ArrayBuffer | any;
+  file!:File;
   adoptionsFromServer : any = []
   sex_options : Array<string> = ['Macho','Hembra']
   sterilization_options : Array<string> = ['Si','No']
@@ -31,29 +34,51 @@ export class CreateAdoptionComponent implements OnInit {
 
   }
 
+    //Renderice the image
+    onPhotoSelected(event: HtmlInputEvent | any) {
+
+
+      if(event.target.files && event.target.files[0]){
+        this.file = <File>event.target.files[0];
+        //Image preview
+        const reader = new FileReader();
+        reader.onload = e => this.photoSelected = reader.result;
+        reader.readAsDataURL(this.file);
+        console.log('Here is an image preview');
+
+
+      }
+      console.log(this.file)
+    }
+
   createAdoptionForm = this.formBuilder.group(
     {
       name_pet: this.formBuilder.control(''),
       age_pet: this.formBuilder.control(''),
       race_pet: this.formBuilder.control(''),
       sex_pet: this.formBuilder.control(''),
+      title: this.formBuilder.control(''),
+      profile_image: this.formBuilder.control(''),
       sterulization_pet: this.formBuilder.control(''),
       description_pet: this.formBuilder.control(''),
       is_exsolovino: this.formBuilder.control('')
     }
   )
 
-  saveAdoption(sex:HTMLSelectElement, exsolovino:HTMLSelectElement, sterilization:HTMLSelectElement){
+  saveAdoption(name_pet: HTMLInputElement, age_pet:HTMLInputElement, race_pet: HTMLInputElement,
+    sex:HTMLSelectElement, sterilization:HTMLSelectElement, description_pet: HTMLTextAreaElement,
+    exsolovino:HTMLSelectElement,
+    title:HTMLInputElement){
 
 
-    this.setControlSexToCorrectValue(sex)
-    this.setControlIsExsolovinoToCorrectValue(exsolovino)
-    this.setControlSterilziationToCorrectValue(sterilization)
-    this.setControlAgePetToCorrectVale()
+
+    let setExsolovino = this.setControlIsExsolovinoToCorrectValue(exsolovino)
+    let setSterilization = this.setControlSterilziationToCorrectValue(sterilization)
     const newAdoption = this.createAdoptionForm.value
     console.log(newAdoption);
 
-     this.adoptionServices.createAdoption(newAdoption)
+     this.adoptionServices.createAdoption(name_pet.value,age_pet.value,race_pet.value,sex.value,setSterilization,description_pet.value,
+    setExsolovino,title.value,this.file)
 
 
    .subscribe(res => {
@@ -64,38 +89,30 @@ export class CreateAdoptionComponent implements OnInit {
 
   }
 
-  setControlSexToCorrectValue(data:HTMLSelectElement){
-    this.createAdoptionForm.controls['sex_pet'].setValue(data.value)
-  }
 
-  setControlIsExsolovinoToCorrectValue(data:HTMLSelectElement){
-    console.log(data.value);
 
+
+  setControlIsExsolovinoToCorrectValue(data:HTMLSelectElement):string{
     if (data.value === 'Si') {
-      this.createAdoptionForm.controls['is_exsolovino'].setValue(true)
+      return "true";
     }else if (data.value === 'No'){
-      this.createAdoptionForm.controls['is_exsolovino'].setValue(false)
+      return "false";
     }
+    return "false"
 
   }
 
-  setControlSterilziationToCorrectValue(data:HTMLSelectElement){
-    console.log(data.value);
-
+  setControlSterilziationToCorrectValue(data:HTMLSelectElement):string{
     if (data.value === 'Si') {
-      this.createAdoptionForm.controls['sterulization_pet'].setValue(true)
+      return "true";
     }else if(data.value === 'No'){
-      this.createAdoptionForm.controls['sterulization_pet'].setValue(false)
+      return "false";
     }
-
+    return "false"
   }
 
-  setControlAgePetToCorrectVale(){
-    let ageInNumber = this.createAdoptionForm.controls['age_pet'].value
-    let ageToStirng = ageInNumber.toString()
-    this.createAdoptionForm.controls['age_pet'].setValue(ageToStirng)
 
-  }
+
 
 
 

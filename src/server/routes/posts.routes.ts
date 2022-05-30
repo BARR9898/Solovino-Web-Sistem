@@ -1,4 +1,5 @@
 import { Router } from 'express'
+import upload from '../lib-images/multer'
 const router = Router();
 
 
@@ -15,10 +16,10 @@ router.route('/:id')
     .get(getPost);
 
 router.route('/')
-    .post(createPost);
+    .post(upload.single('image'),createPost);
     
 router.route('/:id')
-    .put(updatedPost);
+    .put(upload.single('image'),updatedPost);
 
 router.route('/:id')
     .delete(deletePost);

@@ -21,15 +21,42 @@ export class AdopcionesService {
     return this.http.get(this.URL + '/' + id)
   }
 
-  createAdoption(adopcion:Adopcion){
-    return this.http.post(this.URL,adopcion)
+  createAdoption(name_pet:string,
+    age_pet:string,race_pet:string,sex_pet:string,
+    sterulization_pet:string,description_pet:string,
+    is_exsolovino:string,title:string
+    ,image:File){
+      const fd = new FormData()
+      fd.append('name_pet',name_pet),
+      fd.append('age_pet',age_pet),
+      fd.append('race_pet',race_pet),
+      fd.append('sex_pet',sex_pet),
+      fd.append('sterulization_pet',sterulization_pet),
+      fd.append('description_pet',description_pet),
+      fd.append('is_exsolovino',is_exsolovino),
+      fd.append('title',title),
+      fd.append('image',image)
+      return this.http.post(this.URL,fd)
   }
 
   deleteAdoption(id:string){
     return  this.http.delete(this.URL + '/' + id)
   }
 
-  updatePet(id:string,adoption:Adopcion){
-    return this.http.put(this.URL + '/' + id , adoption)
+  updatePet(id:string,name_pet:string,
+    age_pet:string,race_pet:string,sex_pet:string,
+    sterulization_pet:string,description_pet:string,
+    is_exsolovino:string,title:string
+    ,image:File){
+      const fd = new FormData();
+      fd.append('name_pet',name_pet),
+      fd.append('age_pet',age_pet),
+      fd.append('race_pet',race_pet),
+      fd.append('sex_pet',sex_pet),
+      fd.append('sterulization_pet',sterulization_pet),
+      fd.append('description_pet',description_pet),
+      fd.append('is_exsolovino',is_exsolovino),
+      fd.append('image',image)
+      return this.http.put(this.URL + '/' + id , fd)
   }
 }

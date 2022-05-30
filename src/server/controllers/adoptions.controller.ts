@@ -4,6 +4,9 @@ import {  Request, Response } from 'express'
 // Models
 import Adoption from '../models/adoptions';
 
+interface MulterRequest extends Request {
+    file: any;
+}
 
 //GET ALL ADOPTIONS
 export async function getAlllAdoptions(req: Request, res: Response): Promise<Response> {
@@ -22,7 +25,11 @@ export async function createAdoption(req: Request, res: Response): Promise<Respo
         sex_pet : req.body.sex_pet,
         sterulization_pet :  req.body.sterulization_pet,
         description_pet : req.body.description_pet,
-        is_exsolovino : req.body.is_exsolovino
+        is_exsolovino : req.body.is_exsolovino,
+        image:{
+            title: req.body.title,
+            imagePath: (req as MulterRequest).file.path
+        }
     });
     await newAdoption.save();
     return res.json({
@@ -55,7 +62,11 @@ export async function updateAdoption(req: Request, res: Response): Promise<Respo
         sex_pet : req.body.sex_pet,
         sterulization_pet :  req.body.sterulization_pet,
         description_pet : req.body.description_pet,
-        is_exsolovino : req.body.is_exsolovino
+        is_exsolovino : req.body.is_exsolovino,
+        image:{
+            title: req.body.title,
+            imagePath: (req as MulterRequest).file.path
+        }
     }
     const updatedAdoption = await Adoption.findByIdAndUpdate(id,newAdoption);
     return res.json({

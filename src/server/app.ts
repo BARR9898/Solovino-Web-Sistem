@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors'
-
+import path from 'path';
 
 // Routes
 import adoptionsRoutes from './routes/adoptions.routes'
@@ -30,7 +30,8 @@ class Applicaction {
         this.app.use(express.urlencoded({extended: false}));
         this.app.use(express.json());
         this.app.use(cors()); //PERMITE COMUNICACION DESDE FUERA DEL SERVIDOR
-        
+        this.app.use('/images', express.static(path.resolve('images')));
+
 
     }
 
