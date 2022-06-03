@@ -7,7 +7,7 @@ import { Adopcion } from '../../models/adopcion';
 export class AdopcionesService {
 
 
-  URL = 'http://localhost:4000/adopciones'
+  URL = 'https://solovinoapi.herokuapp.com/adopciones'
   constructor(
     private http : HttpClient
   ) { }
