@@ -4,39 +4,35 @@ a {
     color: white;
     font-weight: bold;
     height: 20px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
 .navbar {
     background-color: #1c9593fc;
-    height: 80px;
-
+    height: 120px;
+    width: 100%;
 }
 
 .navbar-brand {
-    margin-right: 300px;
+    margin-right: 170px;
     margin-left: 20px;
     font-size: 30px;
     display: flex;
     align-items: center;
     font-family: 'Barlow Condensed', sans-serif;
-
 }
 
 .figure {
     display: flex;
     align-items: center;
-    
 }
 
 img {
-    width: 80px;
-    height: 80px;
-    
+    width: 110px;
+    height: 100px;
 }
 
-mat-icon{
+mat-icon {
     margin-left: 8px;
 }
-
