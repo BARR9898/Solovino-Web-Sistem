@@ -3,6 +3,62 @@ span {
 }
 
 img {
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 12px;
+    margin: 25px auto;
+    border: 1px solid #ccc;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.85); 
+    width:450px;
+    height: 400px;
+    
+}
+
+.card-body{
+    background-color: #95c1b61c;
+    border-radius: 5px;
+    
+
+      
+    
+    
+}
+
+
+span{
+ color: gray;
+ font-size:20px;
+ font-family: 'Barlow Condensed', sans-serif;
+ font-family: 'Caveat', cursive;
+ font-family: 'Patrick Hand', cursive;
+ font-family: 'Tiro Kannada', serif;
+ font-family: 'Yanone Kaffeesatz', sans-serif;
+ justify-content: left;
+ text-align: left;
+ 
+ 
+
+}
+
+
+
+button{
+    background-color: #c7dfda54;
+    border-color: #ddeeeb;
+    border-radius: 5px;
+    height: 40px;
+    width: 80%;
+    
+}
+.boton-color:hover{
+    background: yellow;
+}
+
+.img-container{
+    align-items: center;
+    height: 200px;
 }

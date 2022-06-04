@@ -1,22 +1,22 @@
 <div class="main d-flex align-items-center flex-column p-2">
-    <div class="card mt-4" style=" width: 300px;" *ngFor="let adoption of adopciones; let i = index">
+    <div class="card mt-4"  *ngFor="let adoption of adopciones; let i = index">
 
-        <div class="img-container d-flex justify-content-center">
-            <img class="card-img-top" src="../../../../assets//images/dog.png" alt="Card image cap">
+        <div class="img-container d-flex justify-content-center align-items-center">
+            <img class="card-img-top" [src]="'https://solovinoapi.herokuapp.com/' + adoption.image['imagePath']" alt="Card image cap">
         </div>
 
         <div class="card-body">
             <div class="row-12 d-flex mt-2">
-                <div class="col-6 d-flex justify-content-center  align-items-center"> <span>Edad:</span> </div>
-                <div class="col-6  justify-content-center d-flex flex-column"> <span>{{adoption.age_pet}}</span> </div>
+                <div class="col-3 "> <span>Edad:</span> </div>
+                <div class="col-9 "> <span>{{adoption.age_pet}} años</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
-                <div class="col-6 d-flex justify-content-center"> <span>Descripción:</span> </div>
-                <div class="col-6"> <span>{{adoption.description_pet}}</span> </div>
+                <div class="col-3 "> <span>Descripción:</span> </div>
+                <div class="col-9"> <span>{{adoption.description_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
-                <div class="col-6 d-flex justify-content-center"> <span>Esterilización:</span> </div>
-                <div class="col-6">
+                <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Esterilización:</span> </div>
+                <div class="col-9">
                     <span *ngIf="adoption.sterulization_pet; else isNotSteriliced">
                         Si
                     </span>
@@ -26,12 +26,12 @@
                 </div>
             </div>
             <div class="row-12 d-flex mt-2">
-                <div class="col-6 d-flex justify-content-center"> <span>Sexo:</span> </div>
-                <div class="col-6"> <span>{{adoption.sex_pet}}</span> </div>
+                <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Sexo:</span> </div>
+                <div class="col-9"> <span>{{adoption.sex_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
-                <div class="col-6 d-flex justify-content-center"> <span>Raza:</span> </div>
-                <div class="col-6"> <span>{{adoption.race_pet}}</span> </div>
+                <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Raza:</span> </div>
+                <div class="col-9"> <span>{{adoption.race_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex justify-content-center action mt-2">
                 <button mat-raised-button>
