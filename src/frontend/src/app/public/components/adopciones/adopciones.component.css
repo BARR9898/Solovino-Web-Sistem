@@ -44,6 +44,14 @@ span{
 
 }
 
+textarea{
+    width: 100%;
+    height: 150px;
+    border:none;
+    background-color: #95c1b60e;
+
+}
+
 
 
 button{
