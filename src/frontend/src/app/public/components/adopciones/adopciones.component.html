@@ -5,16 +5,16 @@
         <div class="img-container d-flex justify-content-center align-items-center">
             <img class="card-img-top" [src]="'https://solovinoapi.herokuapp.com/' + adoption.image['imagePath']" alt="Card image cap">
         </div>
-        <!---->
-        <!---->
+    
         <div class="card-body">
+            
             <div class="row-12 d-flex mt-2">
                 <div class="col-3 "> <span>Nombre:</span> </div>
                 <div class="col-9 "> <span>{{adoption.name_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
                 <div class="col-3 "> <span>Edad:</span> </div>
-                <div class="col-9 "> <span>{{adoption.age_pet}} años</span> </div>
+                <div class="col-9 "> <span>{{adoption.age_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
                 <div class="col-3 "> <span>Descripción:</span> </div>
@@ -39,11 +39,7 @@
                 <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Raza:</span> </div>
                 <div class="col-9"> <span>{{adoption.race_pet}}</span> </div>
             </div>
-            <div class="row-12 d-flex justify-content-center action mt-2">
-                <button mat-raised-button>
-                    Ver
-                </button>
-            </div>
+            
 
 
         </div>
