@@ -14,7 +14,7 @@
                     <form [formGroup]="createAdoptionForm" (ngSubmit)="saveAdoption(name_pet,age_pet,race_pet,sexo,sterilization,description_pet,exsolovino,title)">
                         <div class="form-group">
                             <div class="form-section">
-                                <label for="title">Title</label>
+                                <label for="title">Titulo de la imagen</label>
                                 <input type="text" id="title" placeholder="Ingrese el titulo" formControlName="title" #title>
                                 <input type="file" class="form-control d-none" id="profile_picture" formControlName="profile_image" (change)="onPhotoSelected($event)" #fileUpload>
                                 <div class="preview-image p-4">
