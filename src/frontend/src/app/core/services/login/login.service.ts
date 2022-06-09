@@ -49,6 +49,7 @@ export class LoginService {
     localStorage.removeItem(this.ISLOGGEDKEY);
     this.changeLoginStatusSubject.next(false);
     this.changeUserStatusSubject.next(null!);
+    this.router.navigate(['/public'])
   }
 
   isLoggedIn() {

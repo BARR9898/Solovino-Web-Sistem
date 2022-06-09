@@ -7,14 +7,22 @@
             <a mat-list-item routerLink="exsolovinos">Exsolovinos</a>
             <a mat-list-item routerLink="nosotros">Sobre Nosotros</a>
             <a mat-list-item routerLink="users">Usuarios</a>
+
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar color="primary" class="d-flex justify-content-around">
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
+            </button>
             <span>Solovino</span>
+            <button mat-raised-button (click)="logOut()" color="primary">
+              <mat-icon>
+                logout
+              </mat-icon>
+            </button>
+
+
         </mat-toolbar>
 
 
