@@ -17,14 +17,22 @@
                 <div class="col-9 "> <span>{{adoption.age_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
+                
                 <div class="col-3 "> <span>Descripción:</span> </div>
                 <div class="col-9">
-                    <div class="form-floating">
-                        <textarea class="form-control"  id="floatingTextarea">{{adoption.description_pet}}</textarea>
+                    <div>
+                        <textarea readonly  rows="5" cols="45" style="font-family: 'Barlow Condensed', sans-serif;
+                        font-family: 'Caveat', cursive;
+                        font-family: 'Patrick Hand', cursive;
+                        font-family: 'Tiro Kannada', serif;
+                        font-family: 'Yanone Kaffeesatz', sans-serif;
+                        color: gray;
+                        font-size: 20px;">{{adoption.description_pet}}</textarea>
                        
                       </div>
                     
-            </div>
+                </div>
+
             <div class="row-12 d-flex mt-2">
                 <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Esterilización:</span> </div>
                 <div class="col-9">
@@ -37,7 +45,7 @@
                 </div>
             </div>
             <div class="row-12 d-flex mt-2">
-                <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Sexo:</span> </div>
+                <div class="col-3 d-flex justify-content-start  align-items-center" > <span>Sexo:</span> </div>
                 <div class="col-9"> <span>{{adoption.sex_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
