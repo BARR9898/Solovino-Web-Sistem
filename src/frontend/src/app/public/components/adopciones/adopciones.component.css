@@ -5,7 +5,7 @@ span {
 
 img {
     width: 200px;
-    height: 300px;
+    height: 200px;
     border-radius: 10px;
 }
 
@@ -58,6 +58,8 @@ button{
 
 
 .img-container{
+    padding: 10px;
     align-items: center;
     height: 200px;
+    
 }

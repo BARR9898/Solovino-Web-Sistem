@@ -3,7 +3,7 @@
 
         
         <div class="img-container d-flex justify-content-center align-items-center">
-            <img class="card-img-top" [src]="'https://solovinoapi.herokuapp.com/' + adoption.image['imagePath']" alt="Card image cap">
+            <img class="img-fluid" [src]="'https://solovinoapi.herokuapp.com/' + adoption.image['imagePath']">
         </div>
     
         <div class="card-body">
@@ -18,9 +18,9 @@
             </div>
             <div class="row-12 d-flex mt-2">
                 
-                <div class="col-3 "> <span>Descripción:</span> </div>
+                <div class="col-3"> <span>Descripción:</span> </div>
                 <div class="col-9">
-                    <div>
+             
                         <textarea readonly  rows="5" cols="45" style="font-family: 'Barlow Condensed', sans-serif;
                         font-family: 'Caveat', cursive;
                         font-family: 'Patrick Hand', cursive;
@@ -29,10 +29,9 @@
                         color: gray;
                         font-size: 20px;">{{adoption.description_pet}}</textarea>
                        
-                      </div>
                     
                 </div>
-
+            </div>
             <div class="row-12 d-flex mt-2">
                 <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Esterilización:</span> </div>
                 <div class="col-9">
@@ -52,10 +51,6 @@
                 <div class="col-3 d-flex justify-content-start  align-items-center"> <span>Raza:</span> </div>
                 <div class="col-9"> <span>{{adoption.race_pet}}</span> </div>
             </div>
-            
-
-
-        </div>
 
     </div>
 </div>  
