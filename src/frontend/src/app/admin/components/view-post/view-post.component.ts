@@ -3,6 +3,7 @@ import { PostsService } from 'src/app/core/services/posts/posts.service';
 import { ActivatedRoute,Params, Router } from '@angular/router';
 import { Form, FormBuilder } from '@angular/forms';
 
+
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget
 }
@@ -17,7 +18,7 @@ export class ViewPostComponent implements OnInit {
 
   fileName:string=''
   photoSelected: string | ArrayBuffer | any;
-
+  file!:File;
   sex_options:Array<string> = ['Hembra','Macho']
   id:string  = '';
   postFromServer:any=[];
@@ -44,15 +45,7 @@ export class ViewPostComponent implements OnInit {
 
   }
 
-  previewForm = this.formBuilder.group({
-    name_pet:[''],
-    age_pet:[''],
-    race_pet:[''],
-    sex_pet:[''],
-    description_pet:[''],
-    date_disapparence:[''],
-    place_disapparence:['']
-  })
+
 
   updatePetForm = this.formBuilder.group({
     name_pet:[''],
@@ -64,19 +57,6 @@ export class ViewPostComponent implements OnInit {
     date_disapparence:[''],
     place_disapparence:['']
   })
-
-  updatePet(sex_pet: HTMLSelectElement){
-    this.updatePetForm.controls['sex_pet'].setValue(sex_pet.value)
-    const newPost = this.updatePetForm.value
-    this.postService.updatePost(this.id,newPost)
-    .subscribe(res => {
-      this.router.navigate(['admin/list-posts'])
-
-    })
-
-
-
-  }
 
   onPhotoSelected(event: HtmlInputEvent | any) {
 
@@ -90,9 +70,44 @@ export class ViewPostComponent implements OnInit {
         reader.onload = e => this.photoSelected = reader.result;
         reader.readAsDataURL(file);
         console.log(file)
+        this.file = file;
 
     }
   }
+
+  updatePet(
+    name_pet:HTMLInputElement, 
+    age_pet:HTMLInputElement,
+    race_pet:HTMLInputElement,
+    sex_pet:HTMLSelectElement, 
+    desciption_pet:HTMLTextAreaElement,
+    place_disapparence:HTMLInputElement,
+    date_disapparence:HTMLInputElement){
+    this.updatePetForm.controls['sex_pet'].setValue(sex_pet.value)
+    
+    this.postService.updatePost(
+      this.id,
+      name_pet.value,
+      age_pet.value,
+      race_pet.value,
+      sex_pet.value,
+      desciption_pet.value,
+      place_disapparence.value,
+      date_disapparence.value,
+      this.file).subscribe(res => {
+      this.router.navigate(['admin/list-posts'])
+        console.log(res);
+        
+        
+    })
+    
+    
+
+
+
+  }
+
+
 
 
 

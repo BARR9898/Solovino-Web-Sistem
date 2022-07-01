@@ -3,11 +3,10 @@ export interface Adopcion {
     age_pet:String
     race_pet:String
     sex_pet : String
-    sterulization_pet: Boolean
+    sterulization_pet: String
     description_pet:String
     is_exsolovino:String,
     image:{
-      title:String,
-      iamgePath:String
+      imagePath:String
     }
 }

@@ -7,7 +7,7 @@ import { Posts } from '../../models/posts';
 })
 export class PostsService {
 
-  URL = 'https://solovinoapi.herokuapp.com/posts/'
+  URL = 'http://localhost:4000/posts'
   constructor(
     private http : HttpClient
   ) { }
@@ -40,8 +40,27 @@ export class PostsService {
     return  this.http.delete(this.URL + '/' + id)
   }
 
-  updatePost(id:string,post:Posts){
-    return this.http.put(this.URL + '/' + id ,post)
+  updatePost(
+    id:string,
+    name_pet:string,
+    age_pet:string,
+    race_pet:string,
+    sex_pet:string,
+    description_pet:string,
+    place_disapparence:string,
+    date_disapparence:string,
+    image:File){
+      const fd = new FormData();
+      fd.append('name_pet',name_pet);
+      fd.append('age_pet',age_pet);
+      fd.append('race_pet',race_pet);
+      fd.append('sex_pet',sex_pet);
+      fd.append('description_pet',description_pet);
+      fd.append('place_disapparence',place_disapparence);
+      fd.append('date_disapparence',date_disapparence);
+      fd.append('image',image)
+
+    return this.http.put(this.URL + "/" + id,fd)
   }
 
 }

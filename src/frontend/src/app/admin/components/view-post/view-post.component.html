@@ -9,10 +9,17 @@
 
                 </mat-card-title>
                 <mat-card-content>
-                    <form [formGroup]="updatePetForm" (ngSubmit)="updatePet(sex_pet)">
+                    <form [formGroup]="updatePetForm" (ngSubmit)="updatePet(
+                        name_pet,
+                        age_pet,
+                        race_pet,
+                        sex_pet,
+                        description_pet,
+                        place_disapparence,
+                        date_disapparence)">
                         <div class="form-group">
                             <div class="image-section d-flex justify-content-center">
-                                <img [src]="photoSelected || 'http://localhost:4000/' + postFromServer.image.imagePath" alt="">
+                                <img [src]="photoSelected || 'https://solovinoapi.herokuapp.com/' + postFromServer.image.imagePath" alt="">
                             </div>
                             <input type="file" hidden formControlName="image" (change)="onPhotoSelected($event)" #imageUpload>
                             <div class="select-file d-flex justify-content-center ">
@@ -29,34 +36,34 @@
                         </div>
                         <div class="form-group">
                             <label for="age">Nombre</label>
-                            <input type="text" id="age" formControlName="name_pet" [(ngModel)]="postFromServer.name_pet">
+                            <input type="text" id="age" formControlName="name_pet" [(ngModel)]="postFromServer.name_pet" #name_pet>
                         </div>
                         <div class="form-group">
                             <label for="age">Edad</label>
-                            <input type="number" id="age" formControlName="age_pet" [(ngModel)]="postFromServer.age_pet">
+                            <input type="number" id="age" formControlName="age_pet" [(ngModel)]="postFromServer.age_pet" #age_pet>
                         </div>
                         <div class="form-group">
                             <label for="sex">Sexo</label>
                             <select #sex_pet>
-                  <option *ngFor="let option of sex_options" >{{option}}</option>
+                  <option *ngFor="let option of sex_options">{{option}}</option>
                   <input type="text"  formControlName="sex_pet" [(ngModel)]="postFromServer.sex_pet" value="Hola">
                 </select>
                         </div>
                         <div class="form-group">
                             <label for="race">Raza</label>
-                            <input type="text" id="race" formControlName="race_pet" [(ngModel)]="postFromServer.race_pet">
+                            <input type="text" id="race" formControlName="race_pet" [(ngModel)]="postFromServer.race_pet" #race_pet>
                         </div>
                         <div class="form-group">
                             <label for="place_dissaparence">Lugar de desaparición</label>
-                            <input type="text" id="place_dissaparence" formControlName="place_disapparence" [(ngModel)]="postFromServer.place_disapparence">
+                            <input type="text" id="place_dissaparence" formControlName="place_disapparence" [(ngModel)]="postFromServer.place_disapparence" #place_disapparence>
                         </div>
                         <div class="form-group">
                             <label for="description">Descripción</label>
-                            <textarea type="text" id="description" formControlName="description_pet" [(ngModel)]="postFromServer.description_pet"></textarea>
+                            <textarea type="text" id="description" formControlName="description_pet" [(ngModel)]="postFromServer.description_pet" #description_pet></textarea>
                         </div>
                         <div class="form-group">
                             <label for="date_disapparence">Fecha de desaparición</label>
-                            <input type="date" id="date_disapparence" formControlName="date_disapparence" [(ngModel)]="postFromServer.date_disapparence" [value]="postFromServer.date_disapparence">
+                            <input type="date" id="date_disapparence" formControlName="date_disapparence" [(ngModel)]="postFromServer.date_disapparence" [value]="postFromServer.date_disapparence" #date_disapparence>
                         </div>
                         <button mat-raised-button type="submit" color="primary">Guardar</button>
                     </form>

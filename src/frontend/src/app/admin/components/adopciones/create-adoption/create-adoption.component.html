@@ -1,7 +1,7 @@
 <div class="main">
     <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
-        <div class="col-sm-12 col-md-8 col-lg-8 p-4">
-            <mat-card>
+        <div class="col-sm-12 col-md-6 col-lg-6 p-2">
+            <div class="card">
                 <mat-toolbar class="d-flex justify-content-center " color="primary">
                     <mat-card-header>
                         <mat-card-title>
@@ -10,64 +10,80 @@
                     </mat-card-header>
                 </mat-toolbar>
 
-                <mat-card-content class="d-flex justify-content-center">
-                    <form [formGroup]="createAdoptionForm" (ngSubmit)="saveAdoption(name_pet,age_pet,race_pet,sexo,sterilization,description_pet,exsolovino,title)">
+
+                    <form [formGroup]="createAdoptionForm" (ngSubmit)="saveAdoption(name_pet,age_pet,race_pet,sexo,sterilization,description_pet,exsolovino)" class="p-2">
                         <div class="form-group">
                             <div class="form-section">
-                                <label for="title">Titulo de la imagen</label>
-                                <input type="text" id="title" placeholder="Ingrese el titulo" formControlName="title" #title>
-                                <input type="file" class="form-control d-none" id="profile_picture" formControlName="profile_image" (change)="onPhotoSelected($event)" #fileUpload>
+                                <input class="example-full-width" appearance="fill" type="file" class="form-control d-none" id="profile_picture" formControlName="profile_image" (change)="onPhotoSelected($event)" #fileUpload>
                                 <div class="preview-image p-4">
                                     <div class="img-container img-fluid">
                                         <img [src]="photoSelected || '/../../../assets/Images/profile.svg' " class="img-fluid mb-4" alt="">
                                     </div>
-                                    <button type="button" class="btn btn-" mat-raised-button class="upload-btn" (click)="fileUpload.click()">
-                                    <div  class="photoNoExist" *ngIf="!photoSelected">
+                                    <button type="button"  mat-raised-button class="upload-btn" (click)="fileUpload.click()">
+                                        <div  class="photoNoExist" *ngIf="!photoSelected">
                                       <mat-icon>attach_file</mat-icon>
                                       Cargar imágen
-                                    </div>
-                                  <p *ngIf="photoSelected"> Nombre del archivo: {{fileName}} </p>
-                                  </button>
+                                        </div>
+                                        <p *ngIf="photoSelected"> Nombre del archivo: {{fileName}} </p>
+                                    </button>
                                 </div>
-                                <div class="form-section">
-                                    <label for="name">Nombre</label>
-                                    <input type="text" id="name" placeholder="Ingrese el nombre" formControlName="name_pet" #name_pet>
-                                </div>
-                                <div class="form-section">
-                                    <label for="age">Edad</label>
-                                    <input type="number" id="age" placeholder="Ingrese la edad" formControlName="age_pet" #age_pet>
-                                </div>
-                                <div class="form-section">
-                                    <label for="sex">Sexo</label>
-                                    <select id="sex" #sexo>
-                        <option *ngFor="let option of sex_options">{{option}}</option>
-                      </select>
 
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-label>Nombre</mat-label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="Ingrese el nombre" formControlName="name_pet" #name_pet>
+                                    </mat-form-field>
                                 </div>
-                                <div class="form-section">
-                                    <label for="sex">Raza</label>
-                                    <input type="text" id="race" formControlName="race_pet" placeholder="Ingrese una raza" #race_pet>
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-label>Edad</mat-label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="Ingrese la edad" formControlName="age_pet" #age_pet>
+                                    </mat-form-field>
                                 </div>
-                                <div class="form-section">
-                                    <label for="decription">Descripción</label>
-                                    <textarea id="decription" formControlName="description_pet" placeholder="Ingrese una descripción" #description_pet></textarea>
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Seleccione el sexo</mat-label>
+                                        <select matNativeControl formControlName="sex_pet" #sexo>
+                                             <option *ngFor="let sex of sex_options; let i = index">
+                                                 {{ sex }}
+                                            </option>
+                                         </select>
+                                    </mat-form-field>
                                 </div>
-                                <div class="form-section">
-                                    <label for="is_exsolovino">Exsolovino</label>
-                                    <select id="is_exsolovino" #exsolovino>
-                      <option *ngFor="let option of exsolovino_options">{{option}}</option>
-                    </select>
-
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-label>Raza</mat-label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <input matInput placeholder="Ingrese la raza" formControlName="race_pet" #race_pet>
+                                    </mat-form-field>
                                 </div>
-                                <div class="form-section">
-                                    <label for="st">Esterilización</label>
-                                    <select id="st" #sterilization>
-                              <option *ngFor="let option of sterilization_options">{{option}}</option>
-                            </select>
-
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-label>Descripción</mat-label>
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <textarea matInput placeholder="Ingrese una descripción" formControlName="description_pet" #description_pet></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Exsolovino</mat-label>
+                                        <select matNativeControl formControlName="is_exsolovino" #exsolovino>
+                                             <option *ngFor="let option of exsolovino_options; let i = index">
+                                                 {{ option }}
+                                            </option>
+                                         </select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="row-sm-12 row-md-12 row-lg-12">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <mat-label>Esterilización</mat-label>
+                                        <select matNativeControl formControlName="sterulization_pet" #sterilization>
+                                             <option *ngFor="let option of sterilization_options; let i = index">
+                                                 {{ option }}
+                                            </option>
+                                         </select>
+                                    </mat-form-field>
                                 </div>
                             </div>
-                            <div class="form-actions mt-4">
+                            <div class="form-actions mt-4 d-flex justify-content-center">
                                 <button type="submit" id="save-button" mat-raised-button color="primary">Guardar
                               <mat-icon class="ml-2">
                                 save
@@ -76,8 +92,8 @@
                             </div>
                         </div>
                     </form>
-                </mat-card-content>
-            </mat-card>
+
+            </div>
 
         </div>
     </div>

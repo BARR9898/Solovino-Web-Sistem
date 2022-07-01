@@ -7,7 +7,7 @@ import { Adopcion } from '../../models/adopcion';
 export class AdopcionesService {
 
 
-  URL = 'https://solovinoapi.herokuapp.com/adopciones/'
+  URL = 'http://localhost:4000/adopciones'
   constructor(
     private http : HttpClient
   ) { }
@@ -24,8 +24,8 @@ export class AdopcionesService {
   createAdoption(name_pet:string,
     age_pet:string,race_pet:string,sex_pet:string,
     sterulization_pet:string,description_pet:string,
-    is_exsolovino:string,title:string
-    ,image:File){
+    is_exsolovino:string,
+    image:File){
       const fd = new FormData()
       fd.append('name_pet',name_pet),
       fd.append('age_pet',age_pet),
@@ -34,7 +34,6 @@ export class AdopcionesService {
       fd.append('sterulization_pet',sterulization_pet),
       fd.append('description_pet',description_pet),
       fd.append('is_exsolovino',is_exsolovino),
-      fd.append('title',title),
       fd.append('image',image)
       return this.http.post(this.URL,fd)
   }
@@ -43,11 +42,16 @@ export class AdopcionesService {
     return  this.http.delete(this.URL + '/' + id)
   }
 
-  updatePet(id:string,name_pet:string,
-    age_pet:string,race_pet:string,sex_pet:string,
-    sterulization_pet:string,description_pet:string,
-    is_exsolovino:string,title:string
-    ,image:File){
+  updatePet(
+    id:string,
+    name_pet:string,
+    age_pet:string,
+    race_pet:string,
+    sex_pet:string,
+    sterulization_pet:string,
+    description_pet:string,
+    is_exsolovino:string,
+    image:File){
       const fd = new FormData();
       fd.append('name_pet',name_pet),
       fd.append('age_pet',age_pet),

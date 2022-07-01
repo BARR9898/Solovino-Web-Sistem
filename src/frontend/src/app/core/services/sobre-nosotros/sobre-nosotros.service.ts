@@ -6,7 +6,8 @@ import { SobreNosotros } from '../../models/sobre-nosotros';
 })
 export class SobreNosotrosService {
 
-  URL = "https://solovinoapi.herokuapp.com/sobre-nosotros/"
+  URL = "http://localhost:4000/sobre-nosotros"
+  
 
   constructor(
     private http:HttpClient
