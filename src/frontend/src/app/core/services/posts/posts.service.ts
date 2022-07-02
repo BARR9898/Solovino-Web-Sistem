@@ -7,7 +7,7 @@ import { Posts } from '../../models/posts';
 })
 export class PostsService {
 
-  URL = 'https://solovinoapi.herokuapp.com//posts'
+  URL = 'https://solovinoapi.herokuapp.com/posts'
   constructor(
     private http : HttpClient
   ) { }
