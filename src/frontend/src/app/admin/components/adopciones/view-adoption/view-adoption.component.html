@@ -21,7 +21,7 @@
                         *ngIf="dataFromServer != null">
                         <div class="form-group">
                             <div class="image-section">
-                                <img [src]=" 'http://localhost:4000/' + dataFromServer.image.imagePath || photoSelected" class="img-fluid" alt="">
+                                <img [src]=" 'https://solovinoapi.herokuapp.com/' + dataFromServer.image.imagePath || photoSelected" class="img-fluid" alt="">
                             </div>
                             <input type="file" hidden formControlName="image" (change)="onPhotoSelected($event)" #imageUpload>
                             <div class="select-file">

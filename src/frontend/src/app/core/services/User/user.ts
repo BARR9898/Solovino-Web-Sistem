@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  URI = 'http://localhost:4000/users';
+  URI = 'https://solovinoapi.herokuapp.com//users';
 
   constructor(private httpClient: HttpClient) { }
 
