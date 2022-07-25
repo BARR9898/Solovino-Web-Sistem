@@ -1,15 +1,16 @@
 <div class="main d-flex flex-column">
 
+
     <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center mt-4">
         <div class="col-sm-12 col-md-6 col-lg-6">
             <mat-accordion>
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            Misión
+                           <div class="myv">MISIÓN</div> 
                         </mat-panel-title>
                         <mat-panel-description>
-                            ¿Cuál es nuestra misión?
+                            <div class="cual">¿Cuál es nuestra misión?</div>
                         </mat-panel-description>
                         
                     </mat-expansion-panel-header>
@@ -28,11 +29,11 @@
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            Visión
+                           <div class="myv">VISIÓN</div> 
                         </mat-panel-title>
                         <mat-panel-description>
-                            ¿Cuál es nuestra visión?
-                        </mat-panel-description>
+                            <div class="cual">¿Cuál es nuestra visión?</div>
+                             </mat-panel-description>
                     </mat-expansion-panel-header>
                     <div class="data">
                         {{vision}}
@@ -42,14 +43,22 @@
         </div>
 
     </div>
+    
+    <div class="title">
+         Equipo Solovino 
+    </div>
 
     <div class="row-sm-12 row-md-12 row-lg-12 mt-4 d-flex flex-column align-items-center">
         <div class="col-sm-12 col-md-6 col-lg-6" *ngFor="let persona of equipo; let i = index">
+
+            
             <mat-card class="example-card">
+                
                 <mat-card-header class="d-flex justify-content-center">
                     <mat-card-title>{{persona.nombre}}</mat-card-title>     
                 </mat-card-header>
-                <mat-card-content>
+
+                <mat-card-content>  
                     <p>
                         {{persona.curriculum}}
                     </p>
