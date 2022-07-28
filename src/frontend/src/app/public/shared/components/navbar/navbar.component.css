@@ -5,6 +5,7 @@ a {
     font-weight: bolder;
     height: 20px;
     font-family: 'Montserrat', sans-serif;
+<<<<<<< HEAD
     font-size: 20px;
     padding: 25px;
     
@@ -12,6 +13,14 @@ a {
 
 .navbar {
     background-color: rgba(8, 186, 174, 0.924);
+=======
+    font-size: 22px;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #1fb2b0fc;
+>>>>>>> main
     height: 120px;
     width: 100%;
 }
