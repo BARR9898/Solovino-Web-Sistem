@@ -7,6 +7,8 @@ img {
     width: 200px;
     height: 200px;
     border-radius: 10px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .card {
@@ -14,14 +16,16 @@ img {
     margin: 25px auto;
     border: 1px solid #ccc;
     box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.85); 
-    width:550px;
-    height: 500px;
+    width:490px;
+    height: 490px;
     
 }
 
 .card-body{
+    width:490px;
+    height: 490px;
     background-color: #95c1b61c;
-    border-radius: 5px;   
+    border-radius: 5px;
 }
 
 
@@ -42,7 +46,6 @@ textarea{
     border:none;
     background-color: #95c1b604;
     
-
 }
 
 
