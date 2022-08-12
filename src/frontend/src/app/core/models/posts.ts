@@ -7,7 +7,6 @@ export interface Posts {
     place_disapparence:String
     date_disapparence:String,
     image:{
-      title:String,
-      imagepath:String
+      imagePath:String
     }
 }

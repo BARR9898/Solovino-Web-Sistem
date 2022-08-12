@@ -10,10 +10,18 @@
 
                 </mat-card-title>
                 <mat-card-content>
-                    <form [formGroup]="updatePetForm" (ngSubmit)="updatePet(name_pet,age_pet,race_pet,sex_pet,description_pet,isexsolovino,sterilization,title)" *ngIf="dataFromServer != null">
+                    <form [formGroup]="updatePetForm" (ngSubmit)="updatePet(
+                        name_pet,
+                        age_pet,
+                        race_pet,
+                        sex_pet,
+                        description_pet,
+                        isexsolovino,
+                        sterilization)" 
+                        *ngIf="dataFromServer != null">
                         <div class="form-group">
                             <div class="image-section">
-                                <img [src]=" 'http://localhost:4000/' + dataFromServer.image.imagePath || photoSelected" class="img-fluid" alt="">
+                                <img [src]=" 'https://solovinoapi.herokuapp.com/' + dataFromServer.image.imagePath || photoSelected" class="img-fluid" alt="">
                             </div>
                             <input type="file" hidden formControlName="image" (change)="onPhotoSelected($event)" #imageUpload>
                             <div class="select-file">
@@ -27,8 +35,6 @@
                                 </div>
                               </button>
                             </div>
-                            <label for="title">Titulo</label>
-                            <input type="text" id="title" #title formControlName="title" [(ngModel)]="dataFromServer.image.title">
                         </div>
                         <div class="form-group">
                             <label for="age">Nombre</label>

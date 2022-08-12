@@ -19,8 +19,9 @@
                
 
                 <div class="img-dog d-flex justify-content-center align-items-center p-2">
-                    <img class="card-img-top img-fluid" src="../../../../assets/images/dog1.svg" alt="Card image cap">
+                    <img class="card-img-top img-fluid" [src]="'https://solovinoapi.herokuapp.com/' + exsolovino.image['imagePath']"alt="Card image cap">
                 </div>
+
                 <div class="card-body">
 
                     <div class="card-text">    
@@ -69,9 +70,7 @@
 
                         </div>
                     </div>
-                    <div class="actions d-flex justify-content-center">
-                        <a href="/" mat-raised-button class=" mt-4">Ver</a>
-                    </div>
+ 
 
                 </div>
             </div>

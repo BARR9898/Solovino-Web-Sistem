@@ -53,7 +53,7 @@ export class CreatePostComponent implements OnInit {
     date_disapparence: HTMLDataElement
   ) {
     const newPost = this.form.value;
-    this.postService
+     /*this.postService
       .createPost(
         name_pet.value,
         age_pet.value,
@@ -64,10 +64,11 @@ export class CreatePostComponent implements OnInit {
         date_disapparence.value,
         this.file
       )
-      .subscribe((res) => {
+     .subscribe((res) => {
 
         this.router.navigate(['admin/list-posts']);
-      });
+      });*/
+      console.log(newPost)
   }
 
   //Renderice the image

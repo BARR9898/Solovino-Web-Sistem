@@ -65,23 +65,33 @@ export class CreateAdoptionComponent implements OnInit {
     }
   )
 
-  saveAdoption(name_pet: HTMLInputElement, age_pet:HTMLInputElement, race_pet: HTMLInputElement,
-    sex:HTMLSelectElement, sterilization:HTMLSelectElement, description_pet: HTMLTextAreaElement,
-    exsolovino:HTMLSelectElement,
-    title:HTMLInputElement){
+  saveAdoption(
+    name_pet: HTMLInputElement,
+    age_pet:HTMLInputElement, 
+    race_pet: HTMLInputElement,
+    sex:HTMLSelectElement, 
+    sterilization:HTMLSelectElement, 
+    description_pet: HTMLTextAreaElement,
+    exsolovino:HTMLSelectElement){
 
 
 
     let setExsolovino = this.setControlIsExsolovinoToCorrectValue(exsolovino)
     let setSterilization = this.setControlSterilziationToCorrectValue(sterilization)
-    const newAdoption = this.createAdoptionForm.value
-    console.log(newAdoption);
 
-     this.adoptionServices.createAdoption(name_pet.value,age_pet.value,race_pet.value,sex.value,setSterilization,description_pet.value,
-    setExsolovino,title.value,this.file)
+     this.adoptionServices.createAdoption(
+      name_pet.value,
+      age_pet.value,
+      race_pet.value,
+      sex.value,
+      setSterilization,
+      description_pet.value,
+      setExsolovino,
+      this.file)
 
 
    .subscribe(res => {
+      console.log(res);
       this.router.navigate(['/admin/list-adoptions'])
     })
 

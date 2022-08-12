@@ -24,7 +24,7 @@ export class ExsolovinosComponent implements OnInit {
       this.cuantitiOfExsolovinos = this.adopcionesGeted.length
       for (let index = 0; index < this.adopcionesGeted.length; index++) {
         console.log(this.adopcionesGeted)
-        if( (this.adopcionesGeted[index]['is_exsolovino'] === true) && (this.adopcionesGeted[index]['sterulization_pet'] )){
+        if( (this.adopcionesGeted[index]['is_exsolovino'] === "true") && (this.adopcionesGeted[index]['sterulization_pet'] === "true")){
 
           this.exsolovinos[aux] = this.adopcionesGeted[index]
           aux++;

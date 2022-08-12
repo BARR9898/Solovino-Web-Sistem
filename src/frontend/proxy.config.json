@@ -1,0 +1,7 @@
+{
+    "/": {
+      "target": "https://solovinoapi.herokuapp.com",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }

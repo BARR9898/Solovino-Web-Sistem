@@ -87,22 +87,45 @@ export class ViewAdoptionComponent implements OnInit {
         reader.onload = e => this.photoSelected = reader.result;
         reader.readAsDataURL(file);
         console.log(file)
+        this.file = file;
 
     }
   }
 
-  updatePet(name_pet: HTMLInputElement, age_pet:HTMLInputElement, race_pet: HTMLInputElement,
-    sex:HTMLSelectElement, description_pet: HTMLTextAreaElement,
-     exsolovino:HTMLSelectElement, sterilization:HTMLSelectElement,
-    title:HTMLInputElement){
+  updatePet(
+    name_pet: HTMLInputElement, 
+    age_pet:HTMLInputElement, 
+    race_pet: HTMLInputElement,
+    sex:HTMLSelectElement, 
+    description_pet:HTMLTextAreaElement,
+    exsolovino:HTMLSelectElement, 
+    sterilization:HTMLSelectElement
+     ){
     this.setControlSexToHerValueInString(sex)
-    this.setControlExsolovinoToBoolean(exsolovino)
-    this.setControlSterilziationToCorrectValue(sterilization)
-    const newAdoption = this.updatePetForm.value
-    this.adopcionService.updatePet(this.id, name_pet.value,sex.value,race_pet.value,description_pet.value,
-      sex.value,exsolovino.value,sterilization.value,title.value,this.file)
+    let exsolovinoSeted = this.setControlExsolovinoToBoolean(exsolovino)
+    let sterulizationSeted = this.setControlSterilziationToCorrectValue(sterilization)
+    console.log(
+      name_pet.value,
+      age_pet.value,
+      race_pet.value,
+      sex.value,
+      description_pet.value,
+      exsolovinoSeted,
+      sterulizationSeted,
+      this.file);
+    
+   this.adopcionService.updatePet(
+    this.id, 
+    name_pet.value,
+    age_pet.value,
+    race_pet.value,
+    sex.value,
+    sterulizationSeted,
+    description_pet.value,
+    exsolovinoSeted,
+    this.file)
     .subscribe(res => {
-      this.router.navigate(['admin/list-adoptions'])
+      this.router.navigate(['/admin/list-adoptions'])
     })
 
 
@@ -111,12 +134,12 @@ export class ViewAdoptionComponent implements OnInit {
 
   }
 
-  setControlExsolovinoToBoolean(exsolovino:HTMLSelectElement):void{
+  setControlExsolovinoToBoolean(exsolovino:HTMLSelectElement):string{
     let valueOfExsoloivno = exsolovino.value
     if( valueOfExsoloivno == this.exsolovino[0] ){
-      this.updatePetForm.controls['is_exsolovino'].setValue(true)
+      return "true";
     }else{
-      this.updatePetForm.controls['is_exsolovino'].setValue(false)
+     return "false";
     }
 
   }
@@ -125,13 +148,13 @@ export class ViewAdoptionComponent implements OnInit {
     this.updatePetForm.controls['sex_pet'].setValue(sex.value)
   }
 
-  setControlSterilziationToCorrectValue(data:HTMLSelectElement){
+  setControlSterilziationToCorrectValue(data:HTMLSelectElement):string{
     console.log(data.value);
 
     if (data.value === 'Si') {
-      this.updatePetForm.controls['sterulization_pet'].setValue(true)
-    }else if(data.value === 'No'){
-      this.updatePetForm.controls['sterulization_pet'].setValue(false)
+      return "true";
+    }else{
+      return "false";
     }
 
   }

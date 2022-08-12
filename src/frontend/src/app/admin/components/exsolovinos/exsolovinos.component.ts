@@ -27,9 +27,11 @@ export class ExsolovinosComponent implements OnInit {
   }
 
   saveExsolovinos(adoptions:Array<any>){
+    console.log('saveAdoptions',adoptions);
+    
     let aux = 0
     for (let index = 0; index < adoptions.length; index++) {
-      if ( (adoptions[index]['is_exsolovino'] == true ) && (adoptions[index]['sterulization_pet'] == true )  )   {
+      if ( (adoptions[index]['is_exsolovino'] ==  "true" ) && (adoptions[index]['sterulization_pet'] == "true" )  )   {
 
         this.exsolovinos[aux] = adoptions[index]
         aux ++
