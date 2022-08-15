@@ -4,28 +4,58 @@
 }
 
 .card-header {
-    background-color: #013a63;
-    color: white;
+    color: rgba(133, 208, 208, 0.941);
     font-size: 20px;
+    font-size: 25px;
+    font-family: 'Edu VIC WA NT Beginner';
+    font-family: 'PT Serif', serif;
+    font-family: 'Satisfy', cursive;
+    margin-top: 10px;
+    background-color: white;
+    text-decoration:underline;
+
+    
 }
 
 .card {
     margin-top: 30px;
     width: 300px;
+    border-radius: 12px;
+    margin: 25px auto;
+    border: 1px solid #ccc;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.511);
+    border-color: rgba(16, 63, 63, 0.449);
+}
+
+label{
+    font-size: 18px;
+    color: rgba(46, 45, 45, 0.708);
+    font-size: 18px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Satisfy', cursive;
+    padding: 10px;
 }
 
 button {
+    background-color: white;
+    color: black;
     margin-left: 10px;
     margin-right: 10px;
+    border: 2px solid rgba(133, 208, 208, 0.707);
+    margin-top: 10px;
+   
 }
 
 .card-action {
     margin-top: 20px;
 }
 
+
 .form-group {
     margin-top: 10px;
     margin-bottom: 10px;
+    
 }
 
 #tables {
@@ -35,3 +65,18 @@ button {
 .row {
     width: 90%;
 }
+
+th{
+    font-size: 18px;
+    color: rgba(46, 45, 45, 0.708);
+    font-size: 16px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Satisfy', cursive;
+    padding: 12px;
+}
+
+i{
+    padding: 10px;
+}
+
