@@ -1,3 +1,34 @@
 #create-button {
     width: 140px;
 }
+
+table {
+    width: 100%;
+}
+.mat-card-title{
+    color: rgba(133, 208, 208, 0.941);
+    font-size: 25px;
+    
+}
+
+button{
+    border: 2px solid rgba(133, 208, 208, 0.707);
+    
+}
+
+th{
+    color: gray;
+    font-size: 17px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Satisfy', cursive;
+}
+
+table{
+    border-radius: 12px;
+    margin: 25px auto;
+    border: 1px solid #ccc;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.511); 
+   
+}
+
