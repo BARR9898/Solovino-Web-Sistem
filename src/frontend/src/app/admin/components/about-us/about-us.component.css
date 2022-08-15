@@ -1,4 +1,17 @@
+h2{
+    color: rgba(133, 208, 208, 0.941);
+    font-size: 25px;
+}
 
+form {
+    width: 100%;
+    margin-top: 10px;
+    margin: 25px auto;
+    border: 1px solid #ccc;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.511);
+    padding: 20px;
+
+}
 
 
 .example-form {
@@ -9,6 +22,26 @@
 
 .example-full-width {
     width: 100%;
+}
+
+mat-label{
+ color: rgba(46, 45, 45, 0.708); 
+ font-size: 18px;
+ font-family: 'Edu VIC WA NT Beginner', cursive;
+ font-family: 'PT Serif', serif;
+ font-family: 'Satisfy', cursive;
+ padding: 10px;
+
+}
+
+mat-form-field{
+    margin-top: 18px;
+}
+
+button{
+    border: 2px solid rgba(133, 208, 208, 0.707);
+    margin-top: 10px;
+    
 }
 
 #save-button{

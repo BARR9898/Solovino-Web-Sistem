@@ -31,14 +31,14 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="button-section d-flex justify-content-evenly">
-                                    <button type="button" (click)="addPersonTeam()" mat-raised-button color="primary">
+                                    <button type="button" (click)="addPersonTeam()" mat-raised-button >
                                             <mat-icon>
                                                 add
                                             </mat-icon>
                                             Agregar
                                     </button>
     
-                                    <button type="button" (click)="deletePersonTeam(i)" mat-raised-button color="warn">
+                                    <button type="button" (click)="deletePersonTeam(i)" mat-raised-button >
                                             <mat-icon>
                                               delete
                                             </mat-icon>
@@ -59,18 +59,18 @@
                     <div class="row-sm-12 row-md-12 row-lg-12">
                         <mat-label>Mision</mat-label>
                         <mat-form-field class="example-full-width" appearance="fill">
-                            <input matInput placeholder="Ingrese el nombre" formControlName="mision" #mision>
+                            <input matInput placeholder="Ingrese misión" formControlName="mision" #mision>
                         </mat-form-field>
                     </div>
                     <div class="row-sm-12 row-md-12 row-lg-12">
                         <mat-label>Vision</mat-label>
                         <mat-form-field class="example-full-width" appearance="fill">
-                            <input matInput placeholder="Ingrese el nombre" formControlName="vision" #vision>
+                            <input matInput placeholder="Ingrese visión" formControlName="vision" #vision>
                         </mat-form-field>
                     </div>
 
                     <div class="acctions d-flex justify-content-center">
-                        <button type="submit" mat-raised-button color="primary" id="save-button"><mat-icon>save</mat-icon> Guardar</button>
+                        <button type="submit" mat-raised-button id="save-button"><mat-icon>save</mat-icon> Guardar</button>
                     </div>
                     
                 </form>
