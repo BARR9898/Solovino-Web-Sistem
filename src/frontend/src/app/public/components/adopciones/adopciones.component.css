@@ -5,10 +5,11 @@ span {
 
 img {
 
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    padding: 10px;
+    width: 220px;
+    height: 280px;
+    border-radius: 18px;
+    padding: 5px;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.393); 
     
 
 }
@@ -18,14 +19,14 @@ img {
     margin: 25px auto;
     border: 1px solid #ccc;
     box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.85); 
-    width:490px;
-    height: 490px;
+    width:550px;
+    height: 580px;
     
 }
 
 .card-body{
-    width:490px;
-    height: 490px;
+    width:550px;
+    height: 350px;
     background-color: #95c1b61c;
     border-radius: 5px;
 }
@@ -47,6 +48,18 @@ textarea{
     resize: none;
     border:none;
     background-color: #95c1b604;
+    height: 85px;
+    width: 275px;
+    color: gray;
+    font-size:20px;
+    margin-top: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Caveat', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Tiro Kannada', serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    justify-content: left;
+    
     
 }
 
@@ -65,6 +78,6 @@ button{
 .img-container{
     padding: 10px;
     align-items: center;
-    height: 200px;
+    height: 295px;
     
 }
