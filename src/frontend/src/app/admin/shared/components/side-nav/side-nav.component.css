@@ -34,3 +34,12 @@ mat-toolbar{
     box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.511)
    
 }
+
+.Bcompartida {
+    background-color: rgba(8, 186, 174, 0.924);  
+}
+span{
+  color: white;
+  font-size: 32px;
+ 
+}
