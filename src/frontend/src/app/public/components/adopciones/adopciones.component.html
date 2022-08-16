@@ -16,16 +16,11 @@
                 <div class="col-9 "> <span>{{adoption.age_pet}}</span> </div>
             </div>
             <div class="row-12 d-flex mt-2">
-                <div class="col-3"> <span>Descripción:</span> </div>
+                <div class="col-3"> 
+                    <span>Descripción:</span> </div>
                 <div class="col-9">
-                        <div style="font-family: 'Barlow Condensed', sans-serif;
-                        font-family: 'Caveat', cursive;
-                        font-family: 'Patrick Hand', cursive;
-                        font-family: 'Tiro Kannada', serif;
-                        font-family: 'Yanone Kaffeesatz', sans-serif;
-                        color: gray;
-                        overflow: auto;
-                        font-size: 20px;">{{adoption.description_pet}}</div>
+                    <textarea readonly="readonly">{{adoption.description_pet}}</textarea>
+                       
                 </div>
             </div>
             <div class="row-12 d-flex mt-2">
