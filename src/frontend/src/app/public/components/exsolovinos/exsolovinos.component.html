@@ -2,7 +2,7 @@
 
     <div class="row-sm-12 row-md-12 row-lg-12 d-flex p-4 justify-content-end">
         <div class="col-sm-4 col-md-2 col-lg-2 d-flex justify-content-end">
-        
+
             <span id="contador">Cantidad de exsolovinos:</span>
         </div>
         <div class="col-sm-2 col-md-2 col-lg-1 d-flex justify-content-start" id="columnCantidadExsolovinos">
@@ -16,7 +16,7 @@
                 <div class="title d-flex justify-content-center mt-2">
                     <h2>{{exsolovino.name_pet}}</h2>
                 </div>
-               
+
 
                 <div class="img-dog d-flex justify-content-center align-items-center p-2">
                     <img class="card-img-top img-fluid" [src]="'https://solovinoapi.herokuapp.com/' + exsolovino.image['imagePath']"alt="Card image cap">
@@ -24,13 +24,14 @@
 
                 <div class="card-body">
 
-                    <div class="card-text">    
+                    <div class="card-text">
                         <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
                             <div class="col-sm-7 col-lg-4 col-md-3">
                                 <span>Descripción:</span>
                             </div>
                             <div class="col-sm-5 col-lg-8 col-md-9">
-                                <span>{{exsolovino.description_pet}}</span>
+                                <textarea readonly="readonly">{{exsolovino.description_pet}}</textarea>
+
                             </div>
                         </div>
                         <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
@@ -38,7 +39,7 @@
                                 <span>Edad:</span>
                             </div>
                             <div class="col-sm-5 col-lg-8 col-md-9">
-                                <span>{{exsolovino.age_pet}}</span>
+                                <span>{{exsolovino.age_pet}} año(s)</span>
                             </div>
                         </div>
                         <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
