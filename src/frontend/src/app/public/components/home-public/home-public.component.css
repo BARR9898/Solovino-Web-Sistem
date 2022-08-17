@@ -1,4 +1,7 @@
-
+span {
+    width: auto;
+   
+}
 
 img {
     width: 220px;
@@ -6,7 +9,8 @@ img {
     border-radius: 18px;
     padding: 5px;
     box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.393);
-    
+
+
 }
 
 .card {
@@ -14,14 +18,15 @@ img {
     margin: 25px auto;
     border: 1px solid #ccc;
     box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.85); 
-    width:550px;
+    width:500px;
     height: 580px;
 
 }
 
 .card-body{
-    width:550px;
-    height: 350px;
+
+    width:500px;
+    height: 345px;
     background-color: #95c1b61c;
     border-radius: 5px;
 }
@@ -42,7 +47,26 @@ span{
 
 .img-container{
     align-items: center;
-    height: 200px;
+    height: 285px;
     padding: 100px;
 
+}
+
+textarea{
+    resize: none;
+    border:none;
+    background-color: #95c1b604;
+    height: 85px;
+    width: 275px;
+    color: gray;
+    font-size:20px;
+    margin-top: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Caveat', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Tiro Kannada', serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    justify-content: left;
+    
+    
 }
