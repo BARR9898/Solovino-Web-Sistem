@@ -2,7 +2,7 @@
     <div class="row-sm-12 row-md-12 row-lg-12 d-flex justify-content-center">
         <div class="col-sm-12 col-md-6 col-lg-6 p-2">
             <div class="card">
-                <mat-toolbar class="d-flex justify-content-center " color="primary">
+                <mat-toolbar class="d-flex justify-content-center " >
                     <mat-card-header>
                         <mat-card-title>
                             Crear una adopción
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="row-sm-12 row-md-12 row-lg-12">
                                     <mat-form-field class="example-full-width" appearance="fill">
-                                        <mat-label>Seleccione el sexo</mat-label>
+                                        <mat-label class="select-option">Seleccione el sexo</mat-label>
                                         <select matNativeControl formControlName="sex_pet" #sexo>
                                              <option *ngFor="let sex of sex_options; let i = index">
                                                  {{ sex }}
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div class="form-actions mt-4 d-flex justify-content-center">
-                                <button type="submit" id="save-button" mat-raised-button color="primary">Guardar
+                                <button type="submit" id="save-button" mat-raised-button >Guardar
                               <mat-icon class="ml-2">
                                 save
                               </mat-icon>

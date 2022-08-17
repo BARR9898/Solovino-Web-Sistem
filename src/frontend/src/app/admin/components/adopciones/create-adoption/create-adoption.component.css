@@ -25,3 +25,40 @@
     justify-content: center;
 }
 
+mat-toolbar{
+    background-color: rgb(133, 208, 208);
+    border: 1px;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.511);
+}
+
+mat-card-title{
+    color: white;
+}
+
+form{
+    border: 1px solid #ccc;
+    box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.511);
+}
+
+mat-label{
+    color: gray;
+    font-size: 17px;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'PT Serif', serif;
+    font-family: 'Satisfy', cursive;
+    padding: 15px;
+}
+
+select{
+    margin-top: 15px;
+    
+}
+
+.select-option{
+
+}
+
+button{
+    border: 2px solid rgba(133, 208, 208, 0.707);
+    
+}
