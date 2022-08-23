@@ -16,16 +16,18 @@ img {
     margin: 25px auto;
     border: 1px solid #ccc;
     box-shadow: 7px 7px 15px  rgba(133, 208, 208, 0.85); 
-    width:550px;
+    width:500px;
     height: 580px;
 
 }
 
 .card-body{
-    width:550px;
-    height: 350px;
+
+    width:500px;
+    height: 345px;
     background-color: #95c1b61c;
     border-radius: 5px;
+
 }
 
 
@@ -74,8 +76,7 @@ button{
 
 
 .img-container{
-
     align-items: center;
-    height: 200px;
+    height: 285px;
     padding: 100px;
 }
